@@ -1,0 +1,19 @@
+<div class="container">
+	<%= form_for @tower do |t| %>
+	<div class="field">
+			<%= t.label :nombre %>
+			<%= t.text_field :nombre %>
+	</div>
+
+	<div class="field">
+		<%= t.label :portero %>
+		<%= t.text_field :portero %>
+	</div>
+
+	<div class="actions">
+		<%= t.submit %>
+	
+ 	<% end %>
+ 	</div>
+
+</div>

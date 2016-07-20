@@ -1,0 +1,23 @@
+<h2 class="center ">Apartament: <%= @apartament.nombre %></h2>
+<h3 class= "center">Piso: <%= @apartament.piso %></h3>
+<%= link_to raw("<i class='material-icons'>add</i>") , new_tower_apartament_person_path(@tower,@apartament) , :class => "btn-floating btn-light waves-effect waves-light blue" %>
+<table>
+	
+	<thead>
+	<th>Nombre </th>
+	<th>identificacion</th>
+	</thead>
+ <tbody>
+ 	<% @people.each do |a| %>  
+	<tr>
+		<td><%= a.nombre %> </td>
+		<td><%= a.identificacion %></td>
+		<td> <%= link_to raw("<i class='material-icons'>mode_edit</i>"), edit_tower_apartament_person_path(@tower,@apartament,a) %> </td>
+		<td><%= link_to raw("<i class='material-icons '>delete</i> " ), tower_apartament_person_path(@tower,@apartament,a), method: :delete, data: {confirm: "Estas
+Seguro"} %></td>
+
+	</tr>
+ 	<% end %>
+ </tbody>
+</table>
+<%=link_to "Volver a apartamentos", tower_path(@tower) , :class => "left btn waves-effect waves-light blue"%>

@@ -1,0 +1,18 @@
+<div class="container">
+<%= form_for [@tower,@apartament] do |f| %>
+
+<div class="field">
+	<%= f.label :nombre, "Numero apartamento: " %>
+	<%= f.text_field :nombre %>
+</div>
+
+<div class="field">
+	<%= f.label :piso %>
+	<%= f.text_field :piso %>
+</div>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>
+</div>

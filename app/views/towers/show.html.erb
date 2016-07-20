@@ -1,0 +1,30 @@
+<h1 class="center"> <%= @tower.nombre.upcase %></h1>
+<h3 class= "center">  <b> Portero: </b><%= @tower.portero.capitalize %></h3>
+ <%= link_to raw("<i class='material-icons'>add</i>"), new_tower_apartament_path(@tower), :class => "btn-floating btn-light waves-effect waves-light blue"  %>  
+
+<table>
+	
+	<thead>
+	<th>Apartamento </th>
+	<th>Piso</th>
+	<th>Personas</th>
+	</thead>
+ <tbody>
+ 	<% @apartaments.each do |a| %>  
+	<tr>
+		<td><%= a.nombre %> </td>
+		<td><%= a.piso %></td>
+		<td><%= a.people.count %></td>
+		<td> <%= link_to raw("<i class='material-icons'>mode_edit</i>"), edit_tower_apartament_path(@tower,a) %> </td>
+		<td><%= link_to raw("<i class='material-icons '>delete</i> " ), tower_apartament_path(@tower,a), method: :delete, data: {confirm: "Estas
+Seguro"} %></td> <td><%= link_to raw("<i class='material-icons right'>info</i> personas" ),tower_apartament_path(@tower,a), :class => "btn waves-effect waves-light blue"  %></td>
+
+	</tr>
+ 	<% end %>
+ </tbody>
+</table>
+
+<%=link_to "Volver a Torres", towers_path , :class => "left btn waves-effect waves-light blue"%>
+
+
+
